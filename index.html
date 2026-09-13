@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nuhin 💗</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#ffe4ec,#fff5d9,#e8e0ff);color:#5b4350}
+.card{width:min(90%,520px);padding:42px 28px;text-align:center;background:rgba(255,255,255,.72);backdrop-filter:blur(12px);border-radius:28px;box-shadow:0 20px 60px rgba(120,70,100,.18);position:relative;z-index:2}
+.emoji{font-size:54px;animation:bounce 1.8s infinite}.small{font-size:14px;letter-spacing:2px;color:#a66d88;text-transform:uppercase}
+h1{font-size:38px;margin:12px 0;color:#754c63}p{font-size:18px;line-height:1.7}
+button{border:0;border-radius:999px;padding:15px 27px;font-size:17px;font-weight:bold;cursor:pointer;background:#e98aaa;color:white;box-shadow:0 8px 20px rgba(220,110,150,.3);transition:.25s}
+button:hover{transform:translateY(-3px) scale(1.03)}
+.hidden{display:none}.wish{animation:fade .8s ease}.heart{position:fixed;bottom:-30px;font-size:22px;animation:float 6s linear infinite;opacity:.7;z-index:1}
+@keyframes float{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes bounce{50%{transform:translateY(-8px)}} 
+</style>
+</head>
+<body>
+<div class="card">
+  <div id="intro">
+    <div class="emoji">🎁</div>
+    <div class="small">A little surprise for you</div>
+    <h1>Hey Nuhin! 🥺💗</h1>
+    <p>I made something small for my favorite bestie...</p>
+    <button onclick="openWish()">Open Your Surprise 🎀</button>
+  </div>
+
+  <div id="wish" class="hidden wish">
+    <div class="emoji">🎂</div>
+    <div class="small">Today is your day</div>
+    <h1>Happy Birthday, Nuhin! 💕</h1>
+    <p>
+      You're not just my best friend — you're one of those people
+      who make life a little happier just by being there. 🫶
+    </p>
+    <p>
+      May Allah always keep you happy, bless you with success,
+      peace and everything your heart wishes for. Ameen. 🤍
+    </p>
+    <p><b>Stay cute. Stay crazy. Stay you. 😂💗</b></p>
+    <button onclick="more()">One More Thing... 💌</button>
+  </div>
+
+  <div id="more" class="hidden wish">
+    <div class="emoji">🌷</div>
+    <h1>You're special, Nuhin. 🤍</h1>
+    <p>Thank you for being my best friend and for all the little memories, laughs and crazy moments.</p>
+    <p><b>Happy Birthday once again! 🎀✨</b></p>
+  </div>
+</div>
+
+<script>
+function hearts(){
+  const h=document.createElement('div');h.className='heart';
+  h.textContent=['💗','💕','💖','🌸','✨','🎀'][Math.floor(Math.random()*6)];
+  h.style.left=Math.random()*100+'vw';h.style.animationDuration=(4+Math.random()*4)+'s';
+  document.body.appendChild(h);setTimeout(()=>h.remove(),8000);
+}
+setInterval(hearts,500);
+function openWish(){document.getElementById('intro').classList.add('hidden');document.getElementById('wish').classList.remove('hidden')}
+function more(){document.getElementById('wish').classList.add('hidden');document.getElementById('more').classList.remove('hidden')}
+</script>
+</body>
+</html>
